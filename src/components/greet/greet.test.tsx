@@ -1,9 +1,19 @@
 import {render, screen} from '@testing-library/react'
-import { Greet }  from './greet'
+import { Greet } from './greet'
 
-test('Ttest greet', ()=>{
+test('if greeting is functioning properly', () => {
     render(<Greet />)
-    const itemElement = screen.getByText("Hello")
-    expect(itemElement).toBeInTheDocument()
+    const textElement = screen.getByText('Hello')
+    expect(textElement).toBeInTheDocument()
+
+})
+
+test('if greeting has a name', () =>{
+    
+    
+    render(<Greet name="Visnus"/>)
+    const textElement = screen.getByText("Hello Visnus")
+    expect(textElement).toBeInTheDocument()
+
 
 })
